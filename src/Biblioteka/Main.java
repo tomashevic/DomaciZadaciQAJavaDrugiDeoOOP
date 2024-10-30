@@ -46,8 +46,12 @@ public class Main {
         int razlika = rp.vremePisanja();
         System.out.println("Razlika između godine izdavanja prve i poslednje knjige je " + razlika + " godine.");
 
-        String dugometrazniIliNe = rp.dugometrazniRoman(k1);
-        System.out.println("Knjiga: " + k1.getNaslov() + " " + dugometrazniIliNe);
+        ArrayList<String> dugometrazni = rp.dugometrazniRomani(listaKnjige1);
+        if (dugometrazni.size() == 0) {
+            System.out.println("Nema romana sa vise od 500 strana!");
+        } else {
+            System.out.println("Romani koji imaju vise od 500 strana su: " + dugometrazni);
+        }
 
         System.out.println("Ukupan broj zbirki je: " + p.brojZbirki());
 
